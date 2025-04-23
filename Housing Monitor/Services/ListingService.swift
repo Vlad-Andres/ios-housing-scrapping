@@ -9,7 +9,7 @@ struct Listing: Identifiable {
     let price: String
     let age: String
     let isNew: Bool
-    
+     
     // Initialize with isNew flag
     init(title: String, url: String, isNew: Bool = false, price: String, age: String) {
         self.title = title

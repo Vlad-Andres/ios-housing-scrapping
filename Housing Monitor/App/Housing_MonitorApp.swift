@@ -55,6 +55,11 @@ struct Housing_MonitorApp: App {
             case .active:
                 Task {
                     await viewModel.loadListings()
+                    let newListings = viewModel.newListings
+                    print(newListings.count)
+                    if !newListings.isEmpty {
+                        await NotificationService.shared.sendNotification(for: newListings)
+                    }
                 }
             default: break
             }
